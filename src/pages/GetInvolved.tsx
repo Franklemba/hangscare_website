@@ -383,15 +383,16 @@ export default function GetInvolved() {
               </div>
               <div>
                 <h4 className="text-xl font-bold mb-2">Phone</h4>
-                <a href="tel:+1-555-123-4567" className="text-yellow-400 hover:text-yellow-300">
-                  +1 (555) 123-4567
+                <a href="tel:+260 974307132" className="text-yellow-400 hover:text-yellow-300">
+                +260 974307132
                 </a>
               </div>
               <div>
                 <h4 className="text-xl font-bold mb-2">Address</h4>
                 <p className="text-slate-300">
-                  Healthcare District<br />
-                  City, State
+                Ndola Teaching Hospital ,
+                  <br />
+                  Ndola, Zambia
                 </p>
               </div>
             </div>
