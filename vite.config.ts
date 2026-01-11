@@ -7,4 +7,16 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: [
+      'hangscare-foundation.onrender.com',
+      '.onrender.com' // This allows all Render subdomains
+    ]
+  }
 });
+
+
+
+
