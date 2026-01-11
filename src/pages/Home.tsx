@@ -26,33 +26,33 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="absolute inset-0" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center space-y-8 fade-in-up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Caring Beyond
-              <span className="block text-blue-600">Treatment</span>
+              <span className="block text-yellow-500">Treatment</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-slate-100 max-w-3xl mx-auto leading-relaxed">
               Restoring dignity, hope, and humanity to vulnerable patients who have been forgotten by the world.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <button
                 onClick={() => onNavigate?.('get-involved')}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                className="bg-gradient-to-r from-yellow-600 to-yellow-700 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Support a Patient
                 <ChevronRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => onNavigate?.('about')}
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500/10 transition-colors"
               >
                 Learn Our Story
               </button>
@@ -74,7 +74,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* Impact Areas */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-slate-900 mb-4 text-center">Key Impact Areas</h2>
           <p className="text-center text-slate-600 mb-16 max-w-2xl mx-auto">
@@ -87,13 +87,13 @@ export default function Home({ onNavigate }: HomeProps) {
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
+                  className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-yellow-500/20"
                   style={{
                     animation: `fadeInUp 0.8s ease-out ${index * 0.2}s backwards`,
                   }}
                 >
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-blue-600" />
+                  <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                    <Icon className="w-8 h-8 text-yellow-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{impact.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{impact.description}</p>
@@ -107,7 +107,7 @@ export default function Home({ onNavigate }: HomeProps) {
       {/* Story Preview */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-600/10 to-slate-600/10 rounded-xl p-8 sm:p-12 border border-blue-200/30">
+          <div className="bg-gradient-to-r from-yellow-600/10 to-slate-600/10 rounded-xl p-8 sm:p-12 border-2 border-yellow-500/30">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
               Born From the Hospital Ward
             </h2>
@@ -119,7 +119,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
             <button
               onClick={() => onNavigate?.('about')}
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
             >
               Read the Full Story <ChevronRight className="w-5 h-5" />
             </button>
@@ -128,7 +128,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white border-t-2 border-yellow-500/30">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl font-bold">Every Patient Deserves Dignity</h2>
           <p className="text-xl opacity-95">
@@ -138,13 +138,13 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <button
               onClick={() => onNavigate?.('get-involved')}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
+              className="bg-yellow-600 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors"
             >
               Partner With Us
             </button>
             <button
               onClick={() => onNavigate?.('get-involved')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+              className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500/10 transition-colors"
             >
               Volunteer Today
             </button>

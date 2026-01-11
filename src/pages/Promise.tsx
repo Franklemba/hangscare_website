@@ -27,10 +27,10 @@ export default function Promise() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-yellow-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <Handshake className="w-12 h-12 text-blue-600" />
+            <Handshake className="w-12 h-12 text-yellow-600" />
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">Our Promise</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
@@ -42,7 +42,7 @@ export default function Promise() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Opening Statement */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 sm:p-12 rounded-2xl">
+          <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 text-white p-8 sm:p-12 rounded-2xl">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">Hangscare Foundation Exists Because Someone Must Care</h2>
             <p className="text-lg leading-relaxed">
               In a world where patients can be reduced to statistics, where poverty can be treated as a moral failing, where loneliness is overlooked as a symptom—someone must stand and say: this is wrong. This changes now. We will be that someone.
@@ -60,15 +60,15 @@ export default function Promise() {
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 sm:p-10 rounded-xl border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+                  className="bg-white p-8 sm:p-10 rounded-xl border-2 border-slate-200 hover:border-yellow-400 hover:shadow-lg transition-all duration-300"
                   style={{
                     animation: `fadeInUp 0.8s ease-out ${index * 0.15}s backwards`,
                   }}
                 >
                   <div className="flex gap-6">
                     <div className="flex-shrink-0">
-                      <div className="bg-gradient-to-br from-blue-100 to-blue-50 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <Icon className="w-8 h-8 text-blue-600" />
+                      <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-yellow-600" />
                       </div>
                     </div>
                     <div className="flex-grow">
@@ -85,7 +85,7 @@ export default function Promise() {
         {/* Consistency and Commitment */}
         <section className="mb-20">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 sm:p-10 rounded-xl border border-blue-200">
+            <div className="bg-gradient-to-br from-yellow-50 to-white p-8 sm:p-10 rounded-xl border border-yellow-200">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Consistency</h3>
               <p className="text-slate-700 leading-relaxed mb-4">
                 We understand that compassion must be reliable. A patient cannot afford to hope for care one day and despair the next. Therefore, we commit to consistency—showing up not just once, but repeatedly, predictably, faithfully.
@@ -127,7 +127,7 @@ export default function Promise() {
 
         {/* Invitation */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 sm:p-12 rounded-2xl border-l-4 border-blue-600">
+          <div className="bg-gradient-to-r from-yellow-50 to-slate-50 p-8 sm:p-12 rounded-2xl border-l-4 border-yellow-600">
             <h3 className="text-3xl font-bold text-slate-900 mb-6">We Invite You to Join Us</h3>
             <p className="text-lg text-slate-700 leading-relaxed mb-6">
               This promise is not just Hangscare's. It is a promise that belongs to everyone who believes that healthcare should include compassion, that poverty does not determine worth, and that human presence is medicine.
@@ -143,7 +143,7 @@ export default function Promise() {
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
             This is Our Promise. This is Our Mission. This is Our Calling.
           </h2>
-          <p className="text-xl text-blue-600 font-semibold">
+          <p className="text-xl text-yellow-600 font-semibold">
             Hangscare Foundation – Caring Beyond Treatment
           </p>
         </section>

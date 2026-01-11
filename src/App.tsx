@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="flex-grow">
         {renderPage()}

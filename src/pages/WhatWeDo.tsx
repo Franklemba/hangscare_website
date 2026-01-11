@@ -34,7 +34,7 @@ export default function WhatWeDo() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-yellow-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">What We Do</h1>
           <p className="text-xl text-slate-600">
@@ -60,13 +60,13 @@ export default function WhatWeDo() {
               return (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white to-slate-50 p-8 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-br from-white to-slate-50 p-8 rounded-xl border border-slate-200 hover:border-yellow-300 hover:shadow-lg transition-all duration-300"
                   style={{
                     animation: `fadeInUp 0.8s ease-out ${index * 0.1}s backwards`,
                   }}
                 >
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-50 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7 text-blue-600" />
+                  <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-yellow-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{service.description}</p>
@@ -77,7 +77,7 @@ export default function WhatWeDo() {
         </section>
 
         {/* Section 2: Emotional Presence */}
-        <section className="mb-20 bg-gradient-to-r from-blue-50 to-slate-50 p-8 sm:p-12 rounded-2xl border border-blue-200">
+        <section className="mb-20 bg-gradient-to-r from-yellow-50 to-slate-50 p-8 sm:p-12 rounded-2xl border border-yellow-200">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">Emotional Presence & Human Connection</h2>
           <p className="text-lg text-slate-700 leading-relaxed mb-6">
             Sometimes, the greatest need is not something we carry—it is our presence itself.
@@ -86,7 +86,7 @@ export default function WhatWeDo() {
           <div className="space-y-4">
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">
                   •
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function WhatWeDo() {
 
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">
                   •
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function WhatWeDo() {
 
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">
                   •
                 </div>
               </div>
@@ -135,13 +135,13 @@ export default function WhatWeDo() {
               return (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 text-center"
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-yellow-400 hover:shadow-lg transition-all duration-300 text-center"
                   style={{
                     animation: `fadeInUp 0.8s ease-out ${(index + 4) * 0.1}s backwards`,
                   }}
                 >
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <Icon className="w-6 h-6 text-blue-600" />
+                  <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                    <Icon className="w-6 h-6 text-yellow-600" />
                   </div>
                   <h3 className="font-bold text-slate-900 mb-2">{group.title}</h3>
                   <p className="text-sm text-slate-600">{group.description}</p>

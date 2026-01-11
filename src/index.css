@@ -8,7 +8,14 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-slate-50 via-white to-slate-50;
+    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900;
+  }
+
+  :root {
+    --color-gold: #d4a574;
+    --color-gold-dark: #c9a25f;
+    --color-navy: #1a2d3a;
+    --color-navy-light: #253d50;
   }
 }
 

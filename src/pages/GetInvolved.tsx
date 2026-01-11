@@ -66,7 +66,7 @@ export default function GetInvolved() {
       icon: Users,
       title: 'Volunteer',
       description: 'Be the human presence that changes lives. Sit with patients, listen to their stories, and remind them they matter.',
-      color: 'from-blue-50 to-cyan-50',
+      color: 'from-yellow-50 to-cyan-50',
     },
     {
       icon: Briefcase,
@@ -79,7 +79,7 @@ export default function GetInvolved() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-br from-yellow-50 to-slate-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6">Get Involved</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
@@ -102,15 +102,15 @@ export default function GetInvolved() {
                   onClick={() => setActiveTab(way.title.toLowerCase())}
                   className={`p-8 rounded-xl border-2 transition-all duration-300 text-left cursor-pointer ${
                     activeTab === way.title.toLowerCase()
-                      ? 'border-blue-600 bg-blue-50 shadow-lg'
-                      : 'border-slate-200 hover:border-blue-300'
+                      ? 'border-yellow-600 bg-yellow-50 shadow-lg'
+                      : 'border-slate-200 hover:border-yellow-300'
                   }`}
                   style={{
                     animation: `fadeInUp 0.8s ease-out ${index * 0.1}s backwards`,
                   }}
                 >
                   <div className={`bg-gradient-to-br ${way.color} w-14 h-14 rounded-lg flex items-center justify-center mb-4`}>
-                    <Icon className="w-7 h-7 text-blue-600" />
+                    <Icon className="w-7 h-7 text-yellow-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">{way.title}</h3>
                   <p className="text-slate-600">{way.description}</p>
@@ -166,7 +166,7 @@ export default function GetInvolved() {
 
           {/* Volunteer Tab */}
           {activeTab === 'volunteer' && (
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-8 sm:p-12 rounded-2xl border-2 border-blue-200 fade-in">
+            <div className="bg-gradient-to-r from-yellow-50 to-cyan-50 p-8 sm:p-12 rounded-2xl border-2 border-yellow-200 fade-in">
               <h3 className="text-3xl font-bold text-slate-900 mb-6">Join Our Volunteer Community</h3>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -183,14 +183,14 @@ export default function GetInvolved() {
                       'Assist with discharge transitions',
                     ].map((item, i) => (
                       <li key={i} className="flex gap-3 text-slate-700">
-                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <form onSubmit={handleVolunteerSubmit} className="bg-white p-8 rounded-xl border-2 border-blue-200 space-y-4">
+                <form onSubmit={handleVolunteerSubmit} className="bg-white p-8 rounded-xl border-2 border-yellow-200 space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-slate-900 mb-2">Name</label>
                     <input
@@ -198,7 +198,7 @@ export default function GetInvolved() {
                       required
                       value={volunteerForm.name}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                       placeholder="Your name"
                     />
                   </div>
@@ -210,7 +210,7 @@ export default function GetInvolved() {
                       required
                       value={volunteerForm.email}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -221,7 +221,7 @@ export default function GetInvolved() {
                       type="tel"
                       value={volunteerForm.phone}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, phone: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -231,7 +231,7 @@ export default function GetInvolved() {
                     <select
                       value={volunteerForm.availability}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, availability: e.target.value })}
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
                     >
                       <option value="">Select availability</option>
                       <option value="weekdays">Weekdays</option>
@@ -243,7 +243,7 @@ export default function GetInvolved() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-yellow-600 to-cyan-600 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
                     {loading ? 'Submitting...' : 'Sign Up to Volunteer'}
@@ -349,13 +349,13 @@ export default function GetInvolved() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <h4 className="text-xl font-bold mb-2">Email</h4>
-                <a href="mailto:info@hangscare.org" className="text-blue-400 hover:text-blue-300">
+                <a href="mailto:info@hangscare.org" className="text-yellow-400 hover:text-yellow-300">
                   info@hangscare.org
                 </a>
               </div>
               <div>
                 <h4 className="text-xl font-bold mb-2">Phone</h4>
-                <a href="tel:+1-555-123-4567" className="text-blue-400 hover:text-blue-300">
+                <a href="tel:+1-555-123-4567" className="text-yellow-400 hover:text-yellow-300">
                   +1 (555) 123-4567
                 </a>
               </div>
