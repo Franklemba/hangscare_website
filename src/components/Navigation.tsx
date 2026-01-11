@@ -1,4 +1,4 @@
-import { Heart, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface NavigationProps {
@@ -31,12 +31,14 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2 group"
           >
-            <div className="bg-gradient-to-br from-yellow-600 to-yellow-700 p-2 rounded-lg group-hover:shadow-lg transition-shadow">
-              <Heart className="w-5 h-5 text-slate-900" />
-            </div>
-            <span className="font-bold text-lg text-yellow-500 hidden sm:inline">
+            <img 
+              src="/hangscare logo.png" 
+              alt="Hangscare Foundation Logo" 
+              className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+            />
+            {/* <span className="font-bold text-lg text-yellow-500 hidden sm:inline">
               Hangscare
-            </span>
+            </span> */}
           </button>
 
           {/* Desktop Menu */}

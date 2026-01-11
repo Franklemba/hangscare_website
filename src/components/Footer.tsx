@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -19,8 +19,11 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Heart className="w-6 h-6 text-yellow-500" />
-              <h3 className="font-bold text-lg text-yellow-500">Hangscare Foundation</h3>
+            <img 
+              src="/hangscare logo.png" 
+              alt="Hangscare Foundation Logo" 
+              className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+            />
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
               Caring Beyond Treatment
@@ -57,11 +60,15 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start gap-2 text-slate-400">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-yellow-500" />
-                <span>+1 (555) 123-4567</span>
+                <span>+260 974307132</span>
               </li>
               <li className="flex items-start gap-2 text-slate-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-yellow-500" />
-                <span>Healthcare District, City</span>
+                <span>
+                Ndola Teaching Hospital , Ndola, Zambia
+
+
+                </span>
               </li>
             </ul>
           </div>
@@ -87,7 +94,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-yellow-600/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
             <p>
-              &copy; 2024 Hangscare Foundation. All rights reserved.
+              &copy; 2026 Hangscare Foundation. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-yellow-500 transition-colors">

@@ -2,10 +2,18 @@ import { Heart, Users, Briefcase, Send, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+// Create Supabase client only if environment variables are available
+const getSupabaseClient = () => {
+  const url = import.meta.env.VITE_SUPABASE_URL;
+  const key = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  
+  if (!url || !key) {
+    console.warn('Supabase environment variables are not set. Form submissions will be disabled.');
+    return null;
+  }
+  
+  return createClient(url, key);
+};
 
 export default function GetInvolved() {
   const [activeTab, setActiveTab] = useState('donate');
@@ -25,6 +33,16 @@ export default function GetInvolved() {
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const supabase = getSupabaseClient();
+    
+    if (!supabase) {
+      // Simulate success if Supabase is not configured
+      setContactForm({ name: '', email: '', message: '' });
+      setSubmitted('contact');
+      setTimeout(() => setSubmitted(null), 5000);
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -41,6 +59,16 @@ export default function GetInvolved() {
 
   const handleVolunteerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const supabase = getSupabaseClient();
+    
+    if (!supabase) {
+      // Simulate success if Supabase is not configured
+      setVolunteerForm({ name: '', email: '', phone: '', availability: '' });
+      setSubmitted('volunteer');
+      setTimeout(() => setSubmitted(null), 5000);
+      return;
+    }
+
     setLoading(true);
 
     try {

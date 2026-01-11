@@ -1,10 +1,26 @@
-import { Heart, Users, Stethoscope, HandHeart, ChevronRight } from 'lucide-react';
+import { Heart, Users, Stethoscope, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface HomeProps {
   onNavigate?: (page: string) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
+  const heroImages = [
+    '/whatWeDo.jpg',
+    '/patient101.avif',
+    '/aboutUs.jpg',
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
   const impacts = [
     {
       icon: Heart,
@@ -26,50 +42,136 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
+        {/* Animated Background Blobs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse" style={{ animationDelay: '2s' }} />
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center space-y-8 fade-in-up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Caring Beyond
-              <span className="block text-yellow-500">Treatment</span>
-            </h1>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Hero Image - Left Side with Shuffling Animation */}
+            <div className="relative z-10 order-first">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl group hover:scale-[1.02] transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent z-10" />
+                
+                {/* Image Container with Fade Transition */}
+                <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
+                  {heroImages.map((image, index) => (
+                    <img
+                      key={image}
+                      src={image}
+                      alt={`Hangscare Foundation caring for patients - Image ${index + 1}`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        index === currentImageIndex
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-105'
+                      }`}
+                      style={{
+                        transform: index === currentImageIndex 
+                          ? 'scale(1)' 
+                          : 'scale(1.05)',
+                        transition: 'opacity 1s ease-in-out, transform 1s ease-in-out',
+                      }}
+                    />
+                  ))}
+                  
+                  {/* Floating Animation Overlay */}
+                  <div className="absolute inset-0 z-20 pointer-events-none">
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-yellow-500 rounded-full animate-ping" />
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }} />
+                  </div>
+                </div>
 
-            <p className="text-xl sm:text-2xl text-slate-100 max-w-3xl mx-auto leading-relaxed">
-              Restoring dignity, hope, and humanity to vulnerable patients who have been forgotten by the world.
-            </p>
+                {/* Image Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
+                  {heroImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                      }}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex
+                          ? 'w-8 bg-yellow-500'
+                          : 'w-2 bg-white/50 hover:bg-white/75'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-              <button
-                onClick={() => onNavigate?.('get-involved')}
-                className="bg-gradient-to-r from-yellow-600 to-yellow-700 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Support a Patient
-                <ChevronRight className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => onNavigate?.('about')}
-                className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500/10 transition-colors"
-              >
-                Learn Our Story
-              </button>
+            {/* Text Content - Right Side with Animations */}
+            <div className="text-center lg:text-right space-y-8 fade-in-up z-10 order-last lg:order-last">
+              <div className="space-y-4">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up">
+                  Caring Beyond
+                  <span className="block text-yellow-500 animate-pulse-slow">Treatment</span>
+                </h1>
+
+                <p className="text-xl sm:text-2xl text-slate-100 max-w-3xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  Restoring dignity, hope, and humanity to vulnerable patients who have been forgotten by the world.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end pt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <button
+                  onClick={() => onNavigate?.('get-involved')}
+                  className="group bg-gradient-to-r from-yellow-600 to-yellow-700 text-slate-900 px-8 py-4 rounded-lg font-semibold hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Support a Patient
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+                <button
+                  onClick={() => onNavigate?.('about')}
+                  className="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 hover:text-slate-900 hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                >
+                  Learn Our Story
+                </button>
+              </div>
+
+              {/* Floating Stats or Info Cards */}
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-end pt-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-yellow-500/30 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                  <div className="text-yellow-500 font-bold text-lg">100+</div>
+                  <div className="text-white/80 text-sm">Patients Helped</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-yellow-500/30 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                  <div className="text-yellow-500 font-bold text-lg">24/7</div>
+                  <div className="text-white/80 text-sm">Care Support</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20" />
       </section>
 
       {/* Mission Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Our Mission</h2>
-          <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto">
-            Hangscare Foundation exists to restore dignity, hope, and humanity to vulnerable patients. While doctors and nurses fight disease, we fight neglect, isolation, and despair. We believe that every person deserves care—not just medical treatment, but genuine human presence and compassion.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Our Mission</h2>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Hangscare Foundation exists to restore dignity, hope, and humanity to vulnerable patients. While doctors and nurses fight disease, we fight neglect, isolation, and despair. We believe that every person deserves care—not just medical treatment, but genuine human presence and compassion.
+              </p>
+            </div>
+            <div className="order-1 md:order-2">
+              <img 
+                src="/patients_img.jpg" 
+                alt="Hangscare Foundation providing care and support to patients" 
+                className="w-full h-auto rounded-xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
